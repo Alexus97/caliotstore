@@ -1,0 +1,78 @@
+/* Block: swiper */
+.swiper {
+    width: 90%;
+    height: 450px;
+    margin: 20px auto;
+    position: relative;
+}
+
+/* Element: swiper__slide */
+.swiper__slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;;
+}
+
+/* Element: swiper__pagination */
+.swiper__pagination {
+    position: absolute;
+    text-align: center;
+    bottom: 10px;
+    width: 100%;
+}
+
+/* Element: swiper__pagination-bullet */
+.swiper__pagination-bullet {
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    border-radius: 50%;
+    background: #ccc;
+    opacity: 1;
+    margin: 0 5px;
+}
+
+/* Modifier: swiper__pagination-bullet--active */
+.swiper__pagination-bullet--active {
+    background: #007aff;
+}
+
+/* Element: swiper__button-prev, swiper__button-next */
+.swiper__button-prev,
+.swiper__button-next {
+    position: absolute;
+    top: 50%;
+    width: calc(var(--swiper-navigation-size) / 44 * 27);
+    height: var(--swiper-navigation-size);
+    margin-top: calc(0px - (var(--swiper-navigation-size) / 2));
+    z-index: 100;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+}
+
+/* Element: swiper__button-prev::after, swiper__button-next::after */
+.swiper__button-prev::after,
+.swiper__button-next::after {
+    font-size: var(--swiper-navigation-size);
+    font-family: swiper-icons;
+    font-weight: bold;
+}
+
+/* Modifier: swiper__button-prev--left */
+.swiper__button-prev--left {
+    left: 10px;
+}
+
+/* Modifier: swiper__button-next--right */
+.swiper__button-next--right {
+    right: 10px;
+}
+
+
+

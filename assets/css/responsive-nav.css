@@ -1,0 +1,81 @@
+@media (min-width: 1024px) {
+    .nav__icon {
+        font-size: 1.2rem;
+        color: var(--black--button);
+        cursor: pointer;
+        
+
+    }
+
+}
+
+@media (max-width: 768px) {
+    .nav__toggle, .nav__close {
+        display: flex;
+        cursor: pointer;
+    }
+
+    .nav__close {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        font-size: 1rem;
+        color: var(--black--button);
+        display: flex; /* Visible en móvil por defecto */
+        cursor: pointer;
+        z-index: 110; /* Mayor que el menú */
+    }
+
+    .nav__toggle {
+        font-size: 1rem; /* Tamaño del icono */
+        color: #222; /* Color del icono (ejemplo) */
+        display: flex; /* Visible en móvil por defecto */
+        cursor: pointer;
+    }
+
+
+    .nav__social { 
+
+        display: none; /* Ocultar iconos sociales por defecto en móvil */
+    }
+
+    .nav__list {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        row-gap: 2rem;
+    }
+
+    .nav__link {
+        position: relative;
+        font-size: 1.2rem;
+        color: var(--black--button);
+        text-decoration: none;
+        transition: all .3s;
+    }
+
+    .nav__link::after {
+        content: '';
+        width: 0;
+        height: 2px;
+        left: 0;
+        bottom: -.5rem;
+        position: absolute;
+        background-color: var(--black--button);
+        transition: width .3s;
+    }
+
+    .nav__link:hover::after {
+        width: 30%;
+    }
+
+    
+
+
+}
+
+
+
+
+
+
