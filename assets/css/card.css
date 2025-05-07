@@ -35,18 +35,17 @@
 
 .card__title {
     font-size: var(--h2-font-size);
-    font-weight: 600;
-    color: var(--white-color);
+    font-weight: 500;
+    color: var(--black--button);
     /* text-shadow: 0 0 10px rgba(10, 0, 0, 0.9); */
-    text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
-    margin-top: -.2rem;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);  
 }
 
 .card__price {
     font-size: var(normal-font-size);
     font-weight: 600;
     color: var(--black--button);
-    margin-top: -.1rem;
+    margin-top: .5rem;
     padding: -.5rem;
 }
 

@@ -46,6 +46,7 @@
 .nav__logo{
     height: 70px;
     display: block;
+    object-fit: cover;
 }
 
 .nav__logo:hover {
@@ -81,6 +82,26 @@
      /* Asegura que esté por encima de otros elementos si es necesario */
 }
 
+.nav__search,
+.nav__bag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 0;
+    background-color: var(--white);
+    border-radius: 50%;
+    padding: .5rem;
+    margin: .5rem;
+    width: 2.5rem;
+    height: 2.5rem; *
+    font-size: 1.5rem; /* Ajustado para que el ícono sea más visible */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -.55, 0.265, 1.55);
+}
+
+
+
 /* Estilos para el pop-up */
 .nav__popUp {
     position: absolute;
@@ -109,12 +130,12 @@
     bottom: 100%; /* Posiciona el triángulo en la parte superior del pop-up */
     left: 50%; /* Centra el triángulo horizontalmente */
     transform: translateX(-50%) rotate(45deg); /* Rota para formar el triángulo */
-    width: 8px; /* Tamaño del triángulo */
-    height: 8px; /* Tamaño del triángulo */
+    width: 10px; /* Tamaño del triángulo */
+    height: 10px; /* Tamaño del triángulo */
     background-color: var(--white); /* Color del triángulo (debe coincidir con el fondo del pop-up) */
     /* Opcional: border para que parezca una flecha saliendo del borde */
-    /* border-left: 1px solid var(--border-color); */
-    /* border-top: 1px solid var(--border-color); */
+    border-left: 1px solid var(--border-color);
+    border-top: 1px solid var(--border-color);
 }
 
 /* Mostrar el pop-up cuando se pasa el cursor sobre el contenedor (.nav__icon) */

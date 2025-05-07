@@ -15,12 +15,13 @@
     --container-color: hsl(212, 42%, 20%);
     --white--background: #fdfdfd;
     --gray--background: hsl(225, 16%, 75%);
+    --text-color: #02ac70;
     --black--button: #222;
 
     /*========== Font and typography ==========*/
     /*.5rem = 8px | 1rem = 16px ...*/
     --body-font: "Bai Jamjuree", sans-serif;
-    --h2-font-size: 1.25rem;
+    --h2-font-size: 1.2rem;
     --normal-font-size: 1rem;
 }
 

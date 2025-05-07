@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./assets/css/card.css">
     <link rel="stylesheet" href="./assets/css/navbar.css">
     <link rel="stylesheet" href="./assets/css/bagpag.css">
+    <link rel="stylesheet" href="./assets/css/search.css">
     <link rel="stylesheet" href="./assets/css/swiper.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css">
     <link rel="stylesheet" href="./assets/css/responsive-nav.css">
@@ -49,7 +50,7 @@
 
 
             <div class="nav__logo">
-                <img src="./assets/img/logo-caliot-test3.svg" alt="Logo de la tienda" class="nav__logo">
+                <img src="./assets/img/Logo-caliot3.svg" alt="Logo de la tienda" class="nav__logo">
             </div>
         
             <div class="nav__icons">
@@ -80,9 +81,40 @@
                         <i class="ri-search-line" ></i>
                 </div>
                 <div class="nav__bag">
-                        <i class="ri-shopping-bag-4-line" id="cart-icon" data-quantity="0" alt="shopping bag" class="shopping__bag"></i>
+                        <i class="ri-shopping-bag-4-line" id="cart-icon" data-quantity="0" alt="shopping bag" ></i>
                 </div>
-                
+                <div class="shoping__bag"> 
+                    <!-- shopinba ==> cart -->
+                    <h2 class="card__title">Carrito</h2>
+
+                    <div class="cart-content">
+                        <div class="cart__box">
+                            <img src="./assets/img/modelo1.jpg" alt="" class="cart__img">
+                            <div class="detail__box">
+                                <div class="cart__producto--title">Blusa de lentejuelas</div>
+                                <div class="cart__price">$50</div>
+                                <input 
+                                type="number" 
+                                name=""
+                                id=""
+                                value="1"
+                                class="cart__quantity">
+                            </div>
+                            <i class="ri-delete-bin-7-line cart__remove"></i>
+                        </div>
+
+                    </div>
+                    <div class="total">
+                        <div class="total__title">Total</div>
+                        <div class="total__price">$0</div>
+
+                        <button type="button" class="btn__buy">Pay Now</button>
+
+                        <i class="ri-close-large-line" id="close-cart"></i>
+                    </div>
+
+                </div>
+
             </div>
         </nav>
     </header>
@@ -171,6 +203,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./main/app.js"></script>
     <script src="./main/menu.js"></script>
+    <script src="./main/menu__shopping.js"></script>
 </body>
 </html>
 

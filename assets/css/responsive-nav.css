@@ -3,8 +3,6 @@
         font-size: 1.2rem;
         color: var(--black--button);
         cursor: pointer;
-        
-
     }
 
 }
@@ -27,7 +25,7 @@
     }
 
     .nav__toggle {
-        font-size: 1rem; /* Tamaño del icono */
+        font-size: 1.5rem; /* Tamaño del icono */
         color: #222; /* Color del icono (ejemplo) */
         display: flex; /* Visible en móvil por defecto */
         cursor: pointer;
