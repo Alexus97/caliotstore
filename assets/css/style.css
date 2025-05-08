@@ -14,7 +14,7 @@
     --body-color: hsl(212, 42%, 15%);
     --container-color: hsl(212, 42%, 20%);
     --white--background: #fdfdfd;
-    --gray--background: hsl(225, 16%, 75%);
+    --gray-background: hsl(225, 16%, 75%);
     --text-color: #02ac70;
     --black--button: #222;
 
@@ -49,5 +49,9 @@ a {
 
 ul {
     list-style: none;
+}
+
+main {
+    margin: 2rem 0
 }
 
