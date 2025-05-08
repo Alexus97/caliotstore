@@ -13,10 +13,12 @@
 
   .nav__link {
     position: relative;
-    font-size: 1rem;
+    font-size: 0.95rem;
+    font-weight: 500;
     color: var(--black--button);
     text-decoration: none;
     transition: all 0.3s ease;
+    padding: 0.25rem 0;
   }
 
   .nav__link::after {
@@ -24,10 +26,11 @@
     width: 0;
     height: 2px;
     left: 0;
-    bottom: -0.5rem;
+    bottom: 0;
     position: absolute;
     background-color: #02ac70;
     transition: width 0.3s ease;
+    border-radius: 1px;
   }
 
   .nav__link:hover {
@@ -72,12 +75,18 @@
     row-gap: 2rem;
   }
 
+  .nav__menu {
+    padding-top: 5rem;
+  }
+
   .nav__link {
     position: relative;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    font-weight: 500;
     color: var(--black--button);
     text-decoration: none;
     transition: all 0.3s ease;
+    padding: 0.5rem 0;
   }
 
   .nav__link::after {
@@ -85,7 +94,7 @@
     width: 0;
     height: 2px;
     left: 0;
-    bottom: -0.5rem;
+    bottom: 0;
     position: absolute;
     background-color: #02ac70;
     transition: width 0.3s ease;
@@ -93,6 +102,7 @@
 
   .nav__link:hover {
     color: #02ac70;
+    padding-left: 0.5rem;
   }
 
   .nav__link:hover::after {
@@ -116,5 +126,11 @@
 
   .nav__menu {
     width: 85%;
+    padding-top: 4rem;
+  }
+
+  .nav__link {
+    font-size: 1rem;
+    padding: 0.4rem 0;
   }
 }
