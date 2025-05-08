@@ -1,169 +1,212 @@
 .header {
-    background-color: var(--white);
-    padding: 1rem 0;
-    box-shadow: 10px 10px 20px #babecc, -10px -10px 20px #ffffff;
+  background-color: var(--white);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
 }
 
 .nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0;
 }
 
 .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    /* overflow: hidden; */
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .nav__menu {
-    position: fixed;
-    top: 0;
-    left: -100%;
-    width: 70%;
-    max-width: 300px;
-    height: 100vh;
-    background-color: var(--white--background);
-    box-shadow: -1px 0 10px rgba(0, 0, 0, 0.1); 
-    padding: 4rem 1.5rem;
-    transition: left .4s;
-    z-index: 100;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 70%;
+  max-width: 300px;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  padding: 4rem 1.5rem;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  z-index: 100;
 }
 
 .nav__list {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    row-gap: 2rem;
-
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  row-gap: 2rem;
 }
 
-.nav__toggle, .nav__close {
-    display: none;
+.nav__toggle,
+.nav__close {
+  display: none;
 }
 
-.nav__logo{
-    height: 70px;
-    display: block;
-    object-fit: cover;
+.nav__logo {
+  height: 60px;
+  display: block;
+  object-fit: contain;
+  transition: transform 0.3s ease;
 }
 
 .nav__logo:hover {
-    cursor: pointer;
+  transform: scale(1.05);
+  cursor: pointer;
 }
 
-
-
 .nav__icons {
-    display: flex;
-    gap: .5rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
 }
 
 .nav__icon {
-    /* El contenedor necesita position: relative para que el pop-up (position: absolute)
-       se posicione con respecto a él. */
-    position: relative; /* Cambiado a absolute para que el pop-up se posicione correctamente */
-    display: inline-flex; /* O flex, grid, para centrar el ícono dentro si es necesario */
-    justify-content: center;
-    align-items: center;
-    background-color: var(--white); /* Asegúrate de tener definida la variable --white */
-    border-radius: 50%;
-    padding: .5rem;
-    margin: .5rem;
-    width: 2.5rem;
-    height: 2.5rem;
-    font-size: 1.5rem; /* Ajustado para que el ícono sea más visible */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: all 0.2s cubic-bezier(0.68, -.55, 0.265, 1.55);
-    text-decoration: none; /* Elimina el subrayado de los enlaces */
-    color: initial; /* Usa el color por defecto o define uno */
-     /* Asegura que esté por encima de otros elementos si es necesario */
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border-radius: 50%;
+  padding: 0.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.3rem;
+  color: var(--black--button);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  text-decoration: none;
+}
+
+.nav__icon:hover {
+  color: #02ac70;
+  transform: translateY(-2px);
 }
 
 .nav__search,
 .nav__bag {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    right: 0;
-    background-color: var(--white);
-    border-radius: 50%;
-    padding: .5rem;
-    margin: .5rem;
-    width: 2.5rem;
-    height: 2.5rem; *
-    font-size: 1.5rem; /* Ajustado para que el ícono sea más visible */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: all 0.2s cubic-bezier(0.68, -.55, 0.265, 1.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border-radius: 50%;
+  padding: 0.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.3rem;
+  color: var(--black--button);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
+.nav__search:hover,
+.nav__bag:hover {
+  color: #02ac70;
+  transform: translateY(-2px);
+}
 
-
-/* Estilos para el pop-up */
 .nav__popUp {
-    position: absolute;
-    /* Posiciona el pop-up justo debajo del contenedor padre (.nav__icon) */
-    top: 100%;
-    left: 50%; /* Centra horizontalmente */
-    transform: translateX(-50%); /* Ajusta el centrado */
-    white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
-    background-color: var(--white); /* Color de fondo del pop-up */
-    color: var(--body-color); /* Color del texto del pop-up (ajusta si es necesario) */
-    padding: .5rem .5rem;
-    border-radius: .25rem;
-    font-size: .8rem;
-    opacity: 0; /* Oculto por defecto */
-    visibility: hidden; /* Oculto por defecto */
-    pointer-events: none; /* No interactuable cuando está oculto */
-    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease; /* Transición suave */
-    /* Asegura que esté por encima de otros elementos si es necesario */
-    margin-top: 5px; /* Espacio entre el ícono y el pop-up */
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  white-space: nowrap;
+  background-color: var(--black--button);
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  margin-top: 5px;
 }
 
-/* Estilos para el triángulo del pop-up (opcional) */
 .nav__popUp::before {
-    content: '';
-    position: absolute;
-    bottom: 100%; /* Posiciona el triángulo en la parte superior del pop-up */
-    left: 50%; /* Centra el triángulo horizontalmente */
-    transform: translateX(-50%) rotate(45deg); /* Rota para formar el triángulo */
-    width: 10px; /* Tamaño del triángulo */
-    height: 10px; /* Tamaño del triángulo */
-    background-color: var(--white); /* Color del triángulo (debe coincidir con el fondo del pop-up) */
-    /* Opcional: border para que parezca una flecha saliendo del borde */
-    border-left: 1px solid var(--border-color);
-    border-top: 1px solid var(--border-color);
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 8px;
+  height: 8px;
+  background-color: var(--black--button);
 }
 
-/* Mostrar el pop-up cuando se pasa el cursor sobre el contenedor (.nav__icon) */
 .nav__icon:hover .nav__popUp {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto; /* Permite la interacción (aunque en este caso es solo texto) */
-    /* Opcional: mover ligeramente hacia arriba al aparecer para un efecto */
-    /* transform: translate(-50%, -5px); */
-}
-
-
-.nav__icon:nth-child(1) .nav__popUp {
-    background-color: #1877F2; 
-}
-
-.nav__icon:nth-child(2) .nav__popUp {
-    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
-}
-
-.nav__icon:nth-child(3) .nav__popUp {
-    background-color: #000; 
-    color: #fff;
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
 }
 
 .show-menu {
-    left: 0;
+  left: 0;
 }
 
+@media (max-width: 768px) {
+  .nav__toggle,
+  .nav__close {
+    display: flex;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--black--button);
+    transition: color 0.3s ease;
+  }
 
+  .nav__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    z-index: 110;
+  }
 
+  .nav__close:hover {
+    color: #02ac70;
+  }
+
+  .nav__social {
+    display: none;
+  }
+
+  .nav__list {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    row-gap: 2rem;
+  }
+
+  .nav__link {
+    position: relative;
+    font-size: 1.2rem;
+    color: var(--black--button);
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .nav__link::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -0.5rem;
+    position: absolute;
+    background-color: #02ac70;
+    transition: width 0.3s ease;
+  }
+
+  .nav__link:hover {
+    color: #02ac70;
+  }
+
+  .nav__link:hover::after {
+    width: 30%;
+  }
+}

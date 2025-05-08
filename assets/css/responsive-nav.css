@@ -1,79 +1,120 @@
 @media (min-width: 1024px) {
-    .nav__icon {
-        font-size: 1.2rem;
-        color: var(--black--button);
-        cursor: pointer;
-    }
+  .nav__icon {
+    font-size: 1.2rem;
+    color: var(--black--button);
+    cursor: pointer;
+  }
 
+  .nav__list {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .nav__link {
+    position: relative;
+    font-size: 1rem;
+    color: var(--black--button);
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .nav__link::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -0.5rem;
+    position: absolute;
+    background-color: #02ac70;
+    transition: width 0.3s ease;
+  }
+
+  .nav__link:hover {
+    color: #02ac70;
+  }
+
+  .nav__link:hover::after {
+    width: 100%;
+  }
 }
 
 @media (max-width: 768px) {
-    .nav__toggle, .nav__close {
-        display: flex;
-        cursor: pointer;
-    }
+  .nav__toggle,
+  .nav__close {
+    display: flex;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--black--button);
+    transition: color 0.3s ease;
+  }
 
-    .nav__close {
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-        font-size: 1rem;
-        color: var(--black--button);
-        display: flex; /* Visible en móvil por defecto */
-        cursor: pointer;
-        z-index: 110; /* Mayor que el menú */
-    }
+  .nav__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    z-index: 110;
+  }
 
-    .nav__toggle {
-        font-size: 1.5rem; /* Tamaño del icono */
-        color: #222; /* Color del icono (ejemplo) */
-        display: flex; /* Visible en móvil por defecto */
-        cursor: pointer;
-    }
+  .nav__close:hover {
+    color: #02ac70;
+  }
 
+  .nav__social {
+    display: none;
+  }
 
-    .nav__social { 
+  .nav__list {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    row-gap: 2rem;
+  }
 
-        display: none; /* Ocultar iconos sociales por defecto en móvil */
-    }
+  .nav__link {
+    position: relative;
+    font-size: 1.2rem;
+    color: var(--black--button);
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
 
-    .nav__list {
-        display: flex;
-        flex-direction: column;
-        text-align: left;
-        row-gap: 2rem;
-    }
+  .nav__link::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -0.5rem;
+    position: absolute;
+    background-color: #02ac70;
+    transition: width 0.3s ease;
+  }
 
-    .nav__link {
-        position: relative;
-        font-size: 1.2rem;
-        color: var(--black--button);
-        text-decoration: none;
-        transition: all .3s;
-    }
+  .nav__link:hover {
+    color: #02ac70;
+  }
 
-    .nav__link::after {
-        content: '';
-        width: 0;
-        height: 2px;
-        left: 0;
-        bottom: -.5rem;
-        position: absolute;
-        background-color: var(--black--button);
-        transition: width .3s;
-    }
-
-    .nav__link:hover::after {
-        width: 30%;
-    }
-
-    
-
-
+  .nav__link:hover::after {
+    width: 30%;
+  }
 }
 
+@media (max-width: 480px) {
+  .nav__logo {
+    height: 50px;
+  }
 
+  .nav__icon {
+    font-size: 1.1rem;
+  }
 
+  .nav__search,
+  .nav__bag {
+    font-size: 1.1rem;
+  }
 
-
-
+  .nav__menu {
+    width: 85%;
+  }
+}
